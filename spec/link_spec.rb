@@ -3,11 +3,9 @@ require 'link'
 describe Link do
   describe '#self.all' do
     it 'returns an array of links' do
-      expect(Link.all).to match_array([
-        "https://www.draw.io/",
-        "https://www.google.co.uk/",
-        "http://gothsuptrees.net/"
-      ])
+      expect(Link.all).to include("http://www.draw.io")
+      expect(Link.all).to include("http://www.makersacademy.com")
+      expect(Link.all).to include("http://www.gothsuptrees.net")
     end
   end
 end
