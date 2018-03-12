@@ -1,24 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/vivianallen/projects/makers-course/Bookmark-Manager/spec/link_spec.rb": [
-        1,
-        null,
+      "/Users/danielcampos/Projects/bookmark_manager_w4/spec/features/view_all_links_spec.rb": [
         1,
         1,
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
         null,
         null
       ],
-      "/Users/vivianallen/projects/makers-course/Bookmark-Manager/lib/link.rb": [
+      "/Users/danielcampos/Projects/bookmark_manager_w4/spec/link_spec.rb": [
         1,
         null,
+        1,
+        1,
         1,
         1,
         null,
@@ -30,6 +27,6 @@
         null
       ]
     },
-    "timestamp": 1520868207
+    "timestamp": 1520869865
   }
 }
