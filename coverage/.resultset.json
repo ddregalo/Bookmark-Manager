@@ -1,7 +1,20 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/danielcampos/Projects/bookmark_manager_w4/spec/linkdb_spec.rb": [
+        1,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
     },
-    "timestamp": 1520865078
+    "timestamp": 1520866326
   }
 }
