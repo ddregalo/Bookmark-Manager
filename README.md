@@ -1,8 +1,12 @@
 BOOKMARK MANAGER USER STORIES
-
+```
+US#1
+-------------------
 As a User using the Bookmark Manager program
 so I can view all previous links I've added
 I would like to see a list of links
+```
+![user_story_1_model](user_story_1_model.png)
 
 As a User using the Bookmark Manager program
 so that I can add new links
