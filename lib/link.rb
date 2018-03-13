@@ -12,4 +12,9 @@ class Link
     result.map { |link| link['url'] }
   end
 
+  def self.add_link(new_link)
+    connection = PG.connect(dbname: 'bookmark_manager')
+    connection.exec("INSERT INTO links(url) VALUES('#{new_link[:url]}')")
+  end
+
 end

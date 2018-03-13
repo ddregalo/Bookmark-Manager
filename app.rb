@@ -4,8 +4,12 @@ require_relative './lib/link'
 class BookmarkManager < Sinatra::Base
 
   get '/' do
-    p ENV
-    @link_db = Link.all
+    @links_db = Link.all
     erb :homepage
+  end
+
+  post '/add_link' do
+    Link.add_link(url: params[:new_link])
+    redirect '/'
   end
 end

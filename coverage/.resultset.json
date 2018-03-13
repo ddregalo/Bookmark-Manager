@@ -1,6 +1,16 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/danielcampos/Projects/bookmark_manager_w4/spec/features/add_link_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/danielcampos/Projects/bookmark_manager_w4/spec/features/view_all_links_spec.rb": [
         1,
         1,
@@ -40,6 +50,6 @@
         1
       ]
     },
-    "timestamp": 1520940372
+    "timestamp": 1520946746
   }
 }
