@@ -13,7 +13,11 @@ class Link
   end
 
   def self.add_link(new_link)
-    connection = PG.connect(dbname: 'bookmark_manager')
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
     connection.exec("INSERT INTO links(url) VALUES('#{new_link[:url]}')")
   end
 
