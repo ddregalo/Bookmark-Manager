@@ -4,8 +4,8 @@ class DatabaseConnection
     @connection = PG.connect(dbname: database)
   end
 
-  def self.connection
-    @connection
+  def self.query(sql)
+    @connection.exec(sql)
   end
 
 end

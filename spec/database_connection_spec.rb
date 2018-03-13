@@ -9,10 +9,11 @@ describe 'Database Connection' do
     end
   end
 
-  describe '#self.connection' do
-    it 'confirms the connection is the one we set in setup' do
+  describe '#self.query' do
+    it 'allows sql to be executed on the setup connection' do
       connection = DatabaseConnection.setup('bookmark_manager_test')
-      expect(DatabaseConnection.connection).to eq connection
+      expect(connection).to receive(:exec).with("SELECT * FROM links;")
+      DatabaseConnection.query("SELECT * FROM links;")
     end
   end
 end
