@@ -4,14 +4,22 @@ require 'uri'
 
 class Link
 
-  def self.all
-    result = DatabaseConnection.query("SELECT * FROM links")
-    result.map { |link| link['url'] }
+  attr_reader :id, :url, :title
+
+  def initialize(id,url,title)
+    @id = id
+    @url = url
+    @title = title
   end
 
-  def self.add_link(new_link)
-    return false if uri?(new_link) == false
-    DatabaseConnection.query("INSERT INTO links(url) VALUES('#{new_link}')")
+  def self.all
+    result = DatabaseConnection.query("SELECT * FROM links")
+    result.map { |link| Link.new(link['id'],link['url'],link['title']) }
+  end
+
+  def self.add_link(link,title)
+    return false if uri?(link) == false
+    DatabaseConnection.query("INSERT INTO links(url,title) VALUES('#{link}','#{title}')")
   end
 
   private

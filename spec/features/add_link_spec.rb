@@ -3,6 +3,6 @@ feature 'Adds a Link' do
     visit('/')
     fill_in('new_link', with: 'http://www.warhol.org')
     click_button 'Add Link'
-    expect(page).to have_content 'http://www.warhol.org'
+    expect(page).to have_content 'Andy Warhol'
   end
 end

@@ -1,7 +1,7 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-system "bash", "-c", "rake database:database_test_setup"
+system "bash", "-c", "rake database:test_setup"
 
 ENV['ENVIRONMENT'] = 'test'
 

@@ -29,21 +29,19 @@ namespace :database do
     connection.exec("TRUNCATE links;") # clear the database
 
     # input test data into the database
-    connection.exec("INSERT INTO links VALUES(1, 'http://www.ddregalo.com');")
-    connection.exec("INSERT INTO links VALUES(2, 'http://basquiat.com');")
-    connection.exec("INSERT INTO links VALUES(3, 'https://www.danielarsham.com');")
+    connection.exec("INSERT INTO links VALUES(1, 'http://www.ddregalo.com','DD Regalo');")
+    connection.exec("INSERT INTO links VALUES(2, 'http://basquiat.com','Jean-Michel Basquiat');")
+    connection.exec("INSERT INTO links VALUES(3, 'https://www.danielarsham.com','Daniel Arsham');")
   end
-  
+
   desc 'creates a title column for both databases'
   task :create_title_column do
     p "Create a title column for development and test databases"
     databases = ['bookmark_manager_test','bookmark_manager']
     databases.each do |database|
     connection = PG.connect(dbname: database)
-    connection.exec("ALTER TABLE links ADD title CHAR(30);")
+    connection.exec("ALTER TABLE links ADD title VARCHAR(30);")
     end
-
   end
 
 end
-
