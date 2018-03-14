@@ -2,7 +2,8 @@ source "https://rubygems.org"
 
 gem 'sinatra'
 gem 'rerun'
-gam 'pg'
+gem 'pg'
+gem 'rake'
 
 group :test do
   gem 'capybara'

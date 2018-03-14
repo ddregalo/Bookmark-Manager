@@ -1,9 +1,9 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+system "bash", "-c", "rake database:database_test_setup"
 
 ENV['ENVIRONMENT'] = 'test'
-# ENV['RACK_ENV'] = 'development'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
@@ -16,11 +16,13 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-RSpec.configure do |config|
-  config.before(:each) do
-    require_relative './test_database_setup'
-  end
-end
+# to run before each test
+
+# RSpec.configure do |config|
+#   config.before(:each) do
+#
+#   end
+# end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
