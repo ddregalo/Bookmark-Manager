@@ -14,6 +14,7 @@ class Link
     DatabaseConnection.query("INSERT INTO links(url) VALUES('#{new_link}')")
   end
 
+  private
   def self.uri?(string)
     uri = URI.parse(string)
     %w( http https ).include?(uri.scheme)

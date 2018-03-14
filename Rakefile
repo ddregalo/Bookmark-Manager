@@ -2,10 +2,10 @@ require 'pg'
 
 namespace :database do
   desc 'creates the databases require for the project'
-  task :database_setup do
+  task :setup do
     p "Creating necassary databases..."
 
-    databases = ['bookmark_manger_test','bookmark_manager']
+    databases = ['bookmark_manager_test','bookmark_manager']
 
     databases.each do |database|
     connection = PG.connect(dbname: 'postgres')
@@ -20,7 +20,7 @@ namespace :database do
   end
 
   desc 'sets up the test database for ready for rspec'
-  task :database_test_setup do
+  task :test_setup do
     p "Setting Up Test Database..."
 
     # connect to the test database
@@ -33,4 +33,17 @@ namespace :database do
     connection.exec("INSERT INTO links VALUES(2, 'http://basquiat.com');")
     connection.exec("INSERT INTO links VALUES(3, 'https://www.danielarsham.com');")
   end
+  
+  desc 'creates a title column for both databases'
+  task :create_title_column do
+    p "Create a title column for development and test databases"
+    databases = ['bookmark_manager_test','bookmark_manager']
+    databases.each do |database|
+    connection = PG.connect(dbname: database)
+    connection.exec("ALTER TABLE links ADD title CHAR(30);")
+    end
+
+  end
+
 end
+
