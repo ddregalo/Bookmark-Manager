@@ -14,6 +14,9 @@
       <input type="text" name="new_link">
       <input type="submit" value="Add Link">
     </form>
+    <% if invalid_link %>
+      <p>Please enter a valid url</p>
+    <% end %>
     <br>
     <br>
     <p><%@links_db.each do |link|%>
