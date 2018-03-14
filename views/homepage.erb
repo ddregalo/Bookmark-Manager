@@ -11,7 +11,8 @@
     <br>
     <form action='/add_link' method='POST'>
       <p>ADD A NEW LINK</p>
-      <input type="text" name="new_link">
+      <input placeholder="url" type="text" name="new_link">
+      <input placeholder="title" type="text" name="new_title">
       <input type="submit" value="Add Link">
     </form>
     <% if invalid_link %>
@@ -20,7 +21,8 @@
     <br>
     <br>
     <p><%@links_db.each do |link|%>
-      <%=link.title%><br>
+      <a href="<%=link.url%>"><%=link.title%></a>
+      <br>
     <%end%></p>
   </body>
 </html>

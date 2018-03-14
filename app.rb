@@ -11,7 +11,7 @@ class BookmarkManager < Sinatra::Base
 
   post '/add_link' do
     @links_db = Link.all
-    if Link.add_link(params[:new_link])
+    if Link.add_link(params[:new_link], params[:new_title])
       redirect '/'
     else
       erb :homepage, :locals => {:invalid_link => true}
