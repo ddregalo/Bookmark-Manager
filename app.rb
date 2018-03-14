@@ -10,7 +10,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/add_link' do
-    Link.add_link(url: params[:new_link])
+    Link.add_link(params[:new_link])
     redirect '/'
   end
 end
