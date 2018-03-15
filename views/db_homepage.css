@@ -1,0 +1,19 @@
+  h1 {
+    font-family: "Didot";
+    letter-spacing: 5px;
+    font-size: 60px;
+    text-align: center;
+  }
+  p {
+    font-family: "Didot";
+    letter-spacing: 5px;
+    font-size: 15px;
+    text-align: center;
+  }
+  form {
+    text-align: center;
+  }
+  input {
+    font-family: "Didot";
+    letter-spacing: 2px;
+  }

@@ -3,6 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Bookmark Manager</title>
+    <!-- <link rel="stylesheet" type="text/css" href="db_homepage.css"> -->
+    <style>
+      h1 {
+        font-family: "Didot";
+        letter-spacing: 5px;
+        font-size: 60px;
+        text-align: center;
+      }
+      p {
+        font-family: "Didot";
+        letter-spacing: 5px;
+        font-size: 15px;
+        text-align: center;
+      }
+      form {
+        text-align: center;
+      }
+      input {
+        font-family: "Didot";
+        letter-spacing: 2px;
+      }
+    </style>
   </head>
   <body>
     <h1>THE BOOKMARK MANAGER</h1>
@@ -20,9 +42,11 @@
     <% end %>
     <br>
     <br>
+    <br>
     <p><%@links_db.each do |link|%>
       <a href="<%=link.url%>"><%=link.title%></a>
       <br>
-    <%end%></p>
+    <% end %>
+    </p>
   </body>
 </html>
