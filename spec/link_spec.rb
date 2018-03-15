@@ -21,7 +21,7 @@ describe Link do
 
   describe '#self.add_link' do
     context 'Valid input URL' do
-      it 'calls query method with SQL' do
+      it 'calls query method with SQL to add url and title' do
         valid_link = "http://ricky.hewitt.tech"
         title = 'Ricky Hewitt'
         expect(DatabaseConnection).to receive(:query).with("INSERT INTO links(url,title) VALUES('#{valid_link}','#{title}')")
@@ -34,6 +34,23 @@ describe Link do
         invalid_link = "???"
         title = 'HELLOWORLD'
         expect(Link.add_link(invalid_link,title)).to eq false
+      end
+    end
+  end
+
+  describe '#self.delete_link' do
+    context 'Valid title to delete' do
+      it 'calls query method with sql to delete title' do
+        valid_title = "Daniel Arsham"
+        expect(DatabaseConnection).to receive(:query).with("DELETE FROM links WHERE title = '#{valid_title}';")
+        Link.delete_link(valid_title)
+      end
+    end
+
+    context 'Invalid title to delete' do
+      it 'returns false if title input is not included in title list' do
+        invalid_title = "Totally Invalid"
+        expect(Link.delete_link(invalid_title)).to eq false
       end
     end
   end
