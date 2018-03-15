@@ -36,7 +36,7 @@ namespace :database do
 
   desc 'creates a title column for both databases'
   task :create_title_column do
-    p "Create a title column for development and test databases"
+    p "Creating a title column for development and test databases..."
     databases = ['bookmark_manager_test','bookmark_manager']
     databases.each do |database|
     connection = PG.connect(dbname: database)
