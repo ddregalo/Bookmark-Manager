@@ -18,8 +18,13 @@ class Link
   end
 
   def self.add_link(link,title)
-    return false if uri?(link) == false
+    return false unless uri?(link)
     DatabaseConnection.query("INSERT INTO links(url,title) VALUES('#{link}','#{title}')")
+  end
+
+  def self.delete_link(title)
+    return false unless title_exists?(title)
+    DatabaseConnection.query("DELETE FROM links WHERE title = '#{title}';")
   end
 
   private
@@ -31,4 +36,12 @@ class Link
   rescue URI::InvalidURIError
     false
   end
+
+  def self.title_exists?(title)
+    test_title = DatabaseConnection.query("SELECT * FROM links")
+    title_array = test_title.map { |link| link['title'] }
+    title_array.include?(title)
+  end
 end
+
+# WHERE title ='#{title}'")

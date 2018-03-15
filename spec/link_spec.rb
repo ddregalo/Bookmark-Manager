@@ -1,7 +1,7 @@
 require 'link'
 
 describe Link do
-  describe '#self.all' do
+  describe '.all' do
     it 'returns an array of link instances' do
       expect(Link.all[0]).to be_an_instance_of(Link)
     end
@@ -19,7 +19,7 @@ describe Link do
     end
   end
 
-  describe '#self.add_link' do
+  describe '.add_link' do
     context 'Valid input URL' do
       it 'calls query method with SQL to add url and title' do
         valid_link = "http://ricky.hewitt.tech"
@@ -38,12 +38,15 @@ describe Link do
     end
   end
 
-  describe '#self.delete_link' do
+  describe '.delete_link' do
     context 'Valid title to delete' do
       it 'calls query method with sql to delete title' do
-        valid_title = "Daniel Arsham"
-        expect(DatabaseConnection).to receive(:query).with("DELETE FROM links WHERE title = '#{valid_title}';")
+        valid_title = "Dd Regalo"
         Link.delete_link(valid_title)
+        links = Link.all
+        all_titles = links.map { |link| link.title }
+        # expect(DatabaseConnection).to receive(:query).with("DELETE FROM links WHERE title = '#{valid_title}';")
+        expect(all_titles).not_to include "Dd Regalo"
       end
     end
 

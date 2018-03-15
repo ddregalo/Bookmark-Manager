@@ -11,9 +11,15 @@
         font-size: 60px;
         text-align: center;
       }
+      h4 {
+        font-family: "Didot";
+        letter-spacing: 3px;
+        font-size: 16px;
+        text-align: center;
+      }
       p {
         font-family: "Didot";
-        letter-spacing: 5px;
+        letter-spacing: 2px;
         font-size: 15px;
         text-align: center;
       }
@@ -32,19 +38,31 @@
     <br>
     <br>
     <form action='/add_link' method='POST'>
-      <p>ADD A NEW LINK</p>
+      <h4>ADD A NEW LINK</h4>
       <input placeholder="url" type="text" name="new_link">
       <input placeholder="title" type="text" name="new_title">
       <input type="submit" value="Add Link">
     </form>
+    <br>
+    <br>
+    <form action='/delete_link' method='POST'>
+      <h4>DELETE A LINK</h4>
+      <input placeholder="title" type="text" name="delete_title">
+      <input type="submit" value="Delete">
+    </form>
+    <br>
+    <br>
     <% if invalid_link %>
       <p>Please enter a valid url</p>
     <% end %>
+    <% if invalid_title %>
+      <p>URL Title is not in your bookmarks</p>
+    <%end%>
     <br>
     <br>
     <br>
     <p><%@links_db.each do |link|%>
-      <a href="<%=link.url%>"><%=link.title%></a>
+      <a href="<%=link.url%>" target="_blank"><%=link.title%></a>
       <br>
     <% end %>
     </p>

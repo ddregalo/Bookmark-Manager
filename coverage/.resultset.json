@@ -33,6 +33,16 @@
         null,
         null
       ],
+      "/Users/danielcampos/Projects/bookmark_manager_w4/spec/features/invalid_title_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/danielcampos/Projects/bookmark_manager_w4/spec/features/invalid_url_spec.rb": [
         1,
         1,
@@ -100,6 +110,9 @@
         1,
         1,
         1,
+        5,
+        null,
+        1,
         null,
         null,
         null,
@@ -113,6 +126,6 @@
         null
       ]
     },
-    "timestamp": 1521075677
+    "timestamp": 1521146882
   }
 }

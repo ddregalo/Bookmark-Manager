@@ -13,7 +13,8 @@ namespace :database do
     connection = PG.connect(dbname: database)
     connection.exec "CREATE TABLE links(
       id SERIAL PRIMARY KEY,
-      url VARCHAR(60)
+      url VARCHAR(60),
+      title VARCHAR(30)
       )"
     end
 
