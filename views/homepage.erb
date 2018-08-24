@@ -8,14 +8,16 @@
       h1 {
         font-family: "Didot";
         letter-spacing: 5px;
-        font-size: 60px;
+        font-size: 42px;
         text-align: center;
+        font-weight: 200;
       }
       h4 {
         font-family: "Didot";
         letter-spacing: 3px;
         font-size: 16px;
         text-align: center;
+        font-weight: 200;
       }
       p {
         font-family: "Didot";
@@ -39,7 +41,7 @@
     <br>
     <form action='/add_link' method='POST'>
       <h4>ADD A NEW LINK</h4>
-      <input placeholder="url" type="text" name="new_link">
+      <input placeholder="http://www.example.com" type="text" name="new_link">
       <input placeholder="title" type="text" name="new_title">
       <input type="submit" value="Add Link">
     </form>
@@ -50,6 +52,22 @@
       <input placeholder="title" type="text" name="delete_title">
       <input type="submit" value="Delete">
     </form>
+    <br>
+    <br>
+    <% if update_status %>
+      <form action='/update_link' method='POST'>
+        <h4>Please update url and title //</h4>
+        <input placeholder="url" type="text" name="new_update_link">
+        <input placeholder="title" type="text" name="new_update_title">
+        <input type="submit" value="Update Bookmark">
+      </form>
+    <% else %>
+      <form action='/update_title' method='POST'>
+        <h4>UPDATE A LINK</h4>
+        <input placeholder="title" type="text" name="old_title">
+        <input type="submit" value="Update">
+      </form>
+    <% end %>
     <br>
     <br>
     <% if invalid_link %>

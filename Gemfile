@@ -1,9 +1,11 @@
 source "https://rubygems.org"
 
+gem 'capybara'
 gem 'sinatra'
 gem 'rerun'
 gem 'pg'
 gem 'rake'
+
 
 group :test do
   gem 'capybara'

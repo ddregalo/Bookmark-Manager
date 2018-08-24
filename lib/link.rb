@@ -27,6 +27,14 @@ class Link
     DatabaseConnection.query("DELETE FROM links WHERE title = '#{title}';")
   end
 
+  def self.set_update_title(title)
+    @old_title = title
+  end
+
+  def self.update_link(url, title)
+    DatabaseConnection.query("UPDATE links SET url = '#{url}', title = '#{title}' WHERE title = '#{@old_title}';")
+  end
+
   private
   def self.uri?(string)
     uri = URI.parse(string)
@@ -43,5 +51,3 @@ class Link
     title_array.include?(title)
   end
 end
-
-# WHERE title ='#{title}'")

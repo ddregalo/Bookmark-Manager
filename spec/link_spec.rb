@@ -41,12 +41,12 @@ describe Link do
   describe '.delete_link' do
     context 'Valid title to delete' do
       it 'calls query method with sql to delete title' do
-        valid_title = "Dd Regalo"
+        valid_title = "DD Regalo"
         Link.delete_link(valid_title)
         links = Link.all
         all_titles = links.map { |link| link.title }
         # expect(DatabaseConnection).to receive(:query).with("DELETE FROM links WHERE title = '#{valid_title}';")
-        expect(all_titles).not_to include "Dd Regalo"
+        expect(all_titles).not_to include "DD Regalo"
       end
     end
 
@@ -54,6 +54,27 @@ describe Link do
       it 'returns false if title input is not included in title list' do
         invalid_title = "Totally Invalid"
         expect(Link.delete_link(invalid_title)).to eq false
+      end
+    end
+  end
+
+  describe '.set_update_title' do
+    context 'Sets the title of the link to update' do
+      it 'should record the title to be updated to instance variable' do
+        old_title = "DD Regalo"
+        expect(Link.set_update_title(old_title)).to eq old_title
+      end
+    end
+  end
+
+  describe '.update_link' do
+    context 'Update valid link and title' do
+      it 'calls query method with sql to update the selected link' do
+        old_title = 'DD Regalo'
+        valid_title = "Dd Regalo Art"
+        valid_link = "http://www.ddregalo.com"
+        expect(DatabaseConnection).to receive(:query).with("UPDATE links SET url = '#{valid_link}', title = '#{valid_title}' WHERE title = '#{old_title}';")
+        Link.update_link(valid_link, valid_title)
       end
     end
   end

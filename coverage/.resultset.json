@@ -53,6 +53,26 @@
         null,
         null
       ],
+      "/Users/danielcampos/Projects/bookmark_manager_w4/spec/features/update_link_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/danielcampos/Projects/bookmark_manager_w4/spec/features/view_all_links_spec.rb": [
         1,
         1,
@@ -123,9 +143,30 @@
         null,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1521146882
+    "timestamp": 1521195274
   }
 }
